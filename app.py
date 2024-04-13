@@ -7,8 +7,7 @@ CORS(app)  # Enable CORS for all routes
 
 # OpenAI API key
 OpenaiApiKey = os.environ.get('OpenaiApiKey')
-openai.api_key = OpenaiApiKey
-
+client = openai.Client(api_key=OpenaiApiKey)
 
 @app.route("/query/<query>")
 def respondToQuery(query):
