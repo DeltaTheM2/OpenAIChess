@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # OpenAI API key
-OpenaiApiKey = os.environ['OpenaiApiKey']
+OpenaiApiKey = os.environ.get('OpenaiApiKey')
 client = openai.Client(api_key=OpenaiApiKey)
 
 @app.route("/query/<query>")
