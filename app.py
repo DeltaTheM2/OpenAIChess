@@ -15,14 +15,18 @@ def respondToQuery(query):
   model_engine = "text-davinci-003"
   prompt = (f"{query}")
 
-  completions = openai.Completion.create(
-    engine=model_engine,
-    prompt=prompt,
-    max_tokens=1024,
-    n=1,
-    stop=None,
-    temperature=0.5,
-  )
+   completion = client.chat.completions.create(
+      model="gpt-3.5-turbo-0125",
+      response_format={'type': "json_object"},
+      messages=[{
+          "role":
+          "system",
+          "content":
+          "You are a helpful assistant designed to output JSON.",
+      }, {
+          "role": "user",
+          "content": sentence
+      }])
 
   message = completions.choices[0].text
   response = message.strip()
