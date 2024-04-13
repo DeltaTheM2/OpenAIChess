@@ -21,7 +21,7 @@ def respondToQuery(query):
           "content": query
       }])
 
-  message = completions.choices[0].text
+  message = completion.choices[0].text
   response = message.strip()
   return jsonify(response)
 
