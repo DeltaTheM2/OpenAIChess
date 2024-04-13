@@ -15,9 +15,8 @@ def respondToQuery(query):
   model_engine = "text-davinci-003"
   prompt = (f"{query}")
 
-   completion = client.chat.completions.create(
+  completion = client.chat.completions.create(
       model="gpt-3.5-turbo-0125",
-      response_format={'type': "json_object"},
       messages=[{
           "role":
           "system",
