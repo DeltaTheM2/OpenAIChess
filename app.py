@@ -15,7 +15,7 @@ def respondToQuery(query):
   prompt = (f"{query}")
 
   completion = client.chat.completions.create(
-      model="gpt-4-o",
+      model="gpt-4o",
       messages=[{
           "role": "user",
           "content": query
